@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    background: #6f6f6f;
+    font-family: Arial, sans-serif;
+}
+
+.topo {
+    height: 60px;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-bottom: 1px solid #d4a300;
+    background: #000;
+}
+
+.logo {
+    width: 160px;
+    height: 100%;
+    color: #d4a300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    flex-shrink: 0;
+    border-right: 1px solid #d4a300;
+}
+
+.menu-topo {
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+
+.menu-topo a {
+    flex: 1;
+    color: #d4a300;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-right: 1px solid #d4a300;
+    font-size: 20px;
+}
+
+.menu-topo a:hover {
+    background: #111;
+    color: #ffd54a;
+}
+
+.usuario-topo {
+    min-width: 280px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.login-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    height: 100%;
+}
+
+.login-link:hover {
+    color: #d4a300;
+}
+
+.bolinha-user {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #444;
+    flex-shrink: 0;
+}
+
+.bloco {
+    background: #000;
+    color: white;
+    border-bottom: 1px solid #d4a300;
+    padding: 40px 30px;
+}
+
+.bloco h2 {
+    color: #ffc400;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.conteudo-central {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lista-servicos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-servicos li {
+    background: #111;
+    border: 1px solid #d4a300;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.area-botao {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.btn-amarelo {
+    display: inline-block;
+    background: #f2b600;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 22px;
+    border-radius: 8px;
+}
+
+.btn-amarelo:hover {
+    background: #ffd54a;
+}
+
+.conteudo-texto {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #111;
+    border: 1px solid #d4a300;
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 1.7;
+}
+
+.mapa-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    background: #111;
+    border: 1px solid #d4a300;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.mapa-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.rodape {
+    background: #000;
+    color: #d4a300;
+    text-align: center;
+    padding: 20px;
+}
+
+.rodape p {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+}
+
+.rodape small {
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .topo {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .logo {
+        width: 100%;
+        height: 60px;
+        border-right: none;
+        border-bottom: 1px solid #d4a300;
+    }
+
+    .menu-topo {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .menu-topo a {
+        min-width: 50%;
+        height: 50px;
+        border-bottom: 1px solid #d4a300;
+    }
+
+    .usuario-topo {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .bloco {
+        padding: 30px 20px;
+    }
+
+    .bloco h2 {
+        font-size: 26px;
+    }
+}

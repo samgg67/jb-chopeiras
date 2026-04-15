@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Chopeiras</title>
+    <link rel="stylesheet" href="{% static 'JB_Chopeiras/css/home.css' %}">
+</head>
+<body>
+
+<header class="topo">
+    <div class="logo">JB</div>
+
+    <nav class="menu-topo">
+        <a href="/">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#localizacao">Localização</a>
+    </nav>
+
+    <div class="usuario-topo">
+        <a href="{% url 'tela_entrada' %}" class="login-link">
+            <div class="bolinha-user"></div>
+            <span>Entrar / Registrar</span>
+        </a>
+    </div>
+</header>
+
+<section id="servicos" class="bloco">
+    <h2>Serviços</h2>
+
+    <div class="conteudo-central">
+        <ul class="lista-servicos">
+            <li>
+                <strong>MANUTENÇÃO PREVENTIVA</strong><br>
+                Realizamos revisões periódicas para evitar falhas e prolongar a vida útil da sua chopeira.
+            </li>
+
+            <li>
+                <strong>MANUTENÇÃO CORRETIVA</strong><br>
+                Identificamos e solucionamos problemas técnicos, como falhas na refrigeração, vazamentos e baixa pressão.
+            </li>
+
+            <li>
+                <strong>HIGIENIZAÇÃO COMPLETA</strong><br>
+                Limpeza profissional para garantir qualidade, sabor e segurança no consumo do chopp.
+            </li>
+
+            <li>
+                <strong>ATENDIMENTO NO LOCAL</strong><br>
+                Atendemos com agilidade, garantindo menor tempo de equipamento parado.
+            </li>
+        </ul>
+
+        <div class="area-botao">
+            <a href="{% url 'tela_entrada' %}" class="btn-amarelo">Solicitar Orçamento</a>
+        </div>
+    </div>
+</section>
+
+<section id="sobre" class="bloco">
+    <h2>Sobre Nós</h2>
+
+    <div class="conteudo-texto">
+        <p>
+            A JB Chopeiras é especializada em manutenção, instalação e higienização de chopeiras comerciais.
+            Atendemos bares, restaurantes, eventos e estabelecimentos do setor de alimentos e bebidas,
+            oferecendo soluções rápidas e eficientes para garantir o perfeito funcionamento do seu equipamento.
+            Nosso compromisso é proporcionar atendimento ágil, diagnóstico preciso e serviços realizados
+            com qualidade e responsabilidade.
+        </p>
+    </div>
+</section>
+
+<section id="localizacao" class="bloco">
+    <h2>Localização</h2>
+
+    <div class="mapa-box">
+        <img src="{% static 'JB_Chopeiras/img/mapa-exemplo.png' %}" alt="Mapa da localização">
+    </div>
+</section>
+
+<footer class="rodape">
+    <p>JB Chopeiras</p>
+    <small>Contato: (43) 99999-9999 | Londrina - PR</small>
+</footer>
+
+</body>
+</html>

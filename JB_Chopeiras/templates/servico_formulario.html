@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{% static 'JB_Chopeiras/css/formulario.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ titulo }}</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-salvar">Salvar</button>
+            <a href="{% url 'servicosPage' %}" class="btn btn-voltar">Voltar</a>
+        </form>
+    </div>
+</body>
+</html> 

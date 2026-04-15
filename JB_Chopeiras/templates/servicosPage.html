@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitações - JB Chopeiras</title>
+    <link rel="stylesheet" href="{% static 'JB_Chopeiras/css/servicos.css' %}">
+</head>
+<body>
+<div class="pagina">
+
+    <header class="topo">
+        <div class="logo">JB</div>
+
+        <nav class="menu-topo">
+            <a href="/">Home</a>
+            <a href="#">Dúvidas</a>
+            <a href="#">Formulário</a>
+            <a href="#">Serviços</a>
+        </nav>
+
+        <div class="usuario-topo">
+            <span>Julio Cesar</span>
+            <div class="bolinha-user"></div>
+            <div class="menu-abrir">☰</div>
+        </div>
+    </header>
+
+    <div class="miolo">
+        <aside class="menu-lateral">
+            <a href="#" class="item-menu">Dashboard</a>
+            <a href="#" class="item-menu ativo">Solicitações</a>
+            <a href="#" class="item-menu">Clientes</a>
+            <a href="#" class="item-menu">Relatórios</a>
+            <a href="#" class="item-menu">Configurações</a>
+        </aside>
+
+        <main class="conteudo">
+            <h1 class="titulo">Solicitações</h1>
+
+            <div class="topo-conteudo">
+                <a href="{% url 'criar_servico' %}" class="btn btn-criar">Criar Serviço</a>
+            </div>
+
+            <div class="quadro-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Protocolo</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Endereço</th>
+                            <th>Problema</th>
+                            <th>Status</th>
+                            <th>Notas</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for servico in servicos %}
+                        <tr>
+                            <td>{{ servico.protocolo }}</td>
+                            <td>{{ servico.nome }}</td>
+                            <td>{{ servico.email }}</td>
+                            <td>{{ servico.telefone }}</td>
+                            <td>{{ servico.endereco }}</td>
+                            <td>{{ servico.problema }}</td>
+                            <td>{{ servico.get_status_display }}</td>
+                            <td>{{ servico.notas }}</td>
+                            <td>
+                                <div class="acoes">
+                                    <a href="{% url 'editar_servico' servico.id %}" class="btn btn-editar">Editar</a>
+                                    <a href="{% url 'excluir_servico' servico.id %}" class="btn btn-excluir">Excluir</a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="9">Nenhum serviço cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <footer class="rodape">
+        <div class="rodape-col">
+            <p>Mais sobre nós</p>
+            <div class="icones">
+                <span>f</span>
+                <span>ig</span>
+                <span>w</span>
+                <span>@</span>
+            </div>
+        </div>
+
+        <div class="rodape-col rodape-centro">
+            <div class="logo logo-centro">JB</div>
+            <p>JB Chopeiras</p>
+            <small>(43) 30390738</small>
+        </div>
+
+        <div class="rodape-col rodape-links">
+            <a href="/">Home</a>
+            <a href="#">Dúvidas</a>
+            <a href="#">Formulário</a>
+            <a href="#">Serviços</a>
+            <a href="#">Localização</a>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>
