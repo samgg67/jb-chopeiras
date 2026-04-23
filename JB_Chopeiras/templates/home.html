@@ -20,10 +20,18 @@
     </nav>
 
     <div class="usuario-topo">
-        <a href="{% url 'tela_entrada' %}" class="login-link">
-            <div class="bolinha-user"></div>
-            <span>Entrar / Registrar</span>
-        </a>
+        {% if user.is_authenticated %}
+            <div class="usuario-logado">
+                <div class="bolinha-user"></div>
+                <span class="nome-usuario">Olá, {{ user.username }}</span>
+                <a href="{% url 'sair' %}" class="link-sair">Sair</a>
+            </div>
+        {% else %}
+            <a href="{% url 'tela_entrada' %}" class="login-link">
+                <div class="bolinha-user"></div>
+                <span>Entrar / Registrar</span>
+            </a>
+        {% endif %}
     </div>
 </header>
 
